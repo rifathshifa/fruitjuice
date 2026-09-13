@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: fruitjuice
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        value: https://your-render-app.onrender.com
+      - key: CORS_ORIGIN
+        value: https://your-render-app.onrender.com
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
